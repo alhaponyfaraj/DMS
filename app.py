@@ -129,5 +129,14 @@ class ChatPage(GridLayout):
             self.send_message(None)
 
 
+    def send_message(self, _):
+        message1 = self.active_messages.text
+        self.active_messages.text = ""
+        if message1:
+            self.chat_label.update_chat_log(f"[color=dd1920]{chat_instance.main_page.username_input.text}[/color] >{message1}")
+            send.send(username=chat_instance.main_page.username_input.text,message=message1)
+
+        Clock.schedule_once(self.focus_text_input, 0.1)
+
 
 
