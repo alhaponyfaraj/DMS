@@ -148,3 +148,17 @@ class ChatPage(GridLayout):
 
 class RunApp(App):
 
+    def build(self):
+        self.screen_manager = ScreenManager()
+        self.main_page = MainPage()
+        screen = Screen(name="main")
+        screen.add_widget(self.main_page)
+        self.screen_manager.add_widget(screen)
+
+        self.info = Info()
+        screen = Screen(name="Info_page")
+        screen.add_widget(self.info)
+        self.screen_manager.add_widget(screen)
+
+        return self.screen_manager
+
