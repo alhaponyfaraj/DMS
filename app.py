@@ -83,4 +83,19 @@ class MainPage(GridLayout):
         chat_instance.screen_manager.current = "Chat"
 
 class Info(GridLayout):
+    def __init__(self, **kwards):
+        super().__init__(**kwards)
+
+        # set the column number of the Grid layout
+        self.cols = 1
+        self.message = Label(halign="center", valign="middle", font_size=30)
+        self.message.bind(width=self.update_text_width)
+        self.add_widget(self.message)
+
+    def update_info(self, message):
+        self.message.text = message
+
+    def update_text_width(self, *_):
+        self.message_text_size = (self.message.width * 0.9, None)
+
 
