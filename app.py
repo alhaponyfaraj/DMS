@@ -99,5 +99,29 @@ class Info(GridLayout):
         self.message_text_size = (self.message.width * 0.9, None)
 
 class ChatPage(GridLayout):
+    def __init__(self, **kwards):
+        super().__init__(**kwards)
+        self.cols = 1
+        self.rows = 3
+
+        self.title = Label(size_hint_y=None, markup=True)
+        self.add_widget(Label(text="Distributed Messaging System"))
+
+        self.chat_label = LabelSroll(height=Window.size[1] * 0.9, size_hint_y=None)
+        self.add_widget(self.chat_label)
+
+        self.active_messages = TextInput(width=Window.size[0] * 0.8, size_hint_x=None, multiline=False)
+        self.submit = Button(text="Submit")
+        self.submit.bind(on_press=self.send_message)
+
+        buttom_line = GridLayout(cols=2)
+        buttom_line.add_widget(self.active_messages)
+        buttom_line.add_widget(self.submit)
+        self.add_widget(buttom_line)
+
+        Window.bind(on_key_down=self.on_key_down)
+
+        Clock.schedule_once(self.focus_text_input, 1)
+
 
 
