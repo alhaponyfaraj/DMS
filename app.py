@@ -28,3 +28,11 @@ class LabelSroll(ScrollView):
 
         self.layout.add_widget(self.chat_log)
         self.layout.add_widget(self.scroll_target)
+
+    def update_chat_log(self, message):
+        self.chat_log.text += '\n' + message
+        self.layout.height = self.chat_log.texture_size[1] + 15
+        self.chat_log.height = self.chat_log.texture_size[1]
+        self.chat_log.text_size = (self.chat_log.width * 0.98, None)
+
+        self.scroll_to(self.scroll_target)
