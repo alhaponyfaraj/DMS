@@ -14,3 +14,6 @@ import sys
 
 # The used version of kivy
 kivy.require("1.11.1")
+
+
+class LabelSroll(ScrollView):
