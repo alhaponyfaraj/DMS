@@ -146,4 +146,5 @@ class ChatPage(GridLayout):
         self.chat_label.update_chat_log(f"[color=dd1920]{chat_instance.main_page.username_input.text}[/color] >{message}")
 
 
+class RunApp(App):
 
