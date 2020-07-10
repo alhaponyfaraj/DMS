@@ -39,3 +39,30 @@ class LabelSroll(ScrollView):
 
 
 class MainPage(GridLayout):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        # set the column number of the Grid layout
+        self.cols = 1
+        self.rows = 5
+
+        title = GridLayout(cols=1)
+        title.add_widget(Label(text="Distributed Messaging System ", ))
+        self.add_widget(title,)
+
+
+
+        space = GridLayout(cols=2)
+        self.add_widget(space)
+
+        username = GridLayout(cols=2)
+        username.add_widget(Label(text="Username:"))
+        # Get Username
+        self.username_input = TextInput(multiline=False)
+        username.add_widget(self.username_input)
+        u_name = self.username_input.text
+        self.add_widget(username)
+
+        self.join = Button(text="Join")
+        self.join.bind(on_press=self.join_button)
+        self.add_widget(Label())
+        self.add_widget(self.join)
