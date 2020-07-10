@@ -142,4 +142,9 @@ class ChatPage(GridLayout):
         self.new_message_focus = True
 
 
+    def incoming_message(self, username, message):
+        self.chat_label.update_chat_log(f"[color=dd1920]{chat_instance.main_page.username_input.text}[/color] >{message}")
+
+
+
 
