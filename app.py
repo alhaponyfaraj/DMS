@@ -66,3 +66,13 @@ class MainPage(GridLayout):
         self.join.bind(on_press=self.join_button)
         self.add_widget(Label())
         self.add_widget(self.join)
+
+
+    def join_button(self, instance):
+        username = self.username_input.text
+
+        information = "Attempting to join as the user name:" + username
+        chat_instance.info.update_info(information)
+        chat_instance.screen_manager.current = "Info_page"
+        Clock.schedule_once(self.connect, 1)
+
