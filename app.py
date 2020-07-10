@@ -82,4 +82,5 @@ class MainPage(GridLayout):
         chat_instance.create_chat_page()
         chat_instance.screen_manager.current = "Chat"
 
+class Info(GridLayout):
 
