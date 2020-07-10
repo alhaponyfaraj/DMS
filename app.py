@@ -76,3 +76,10 @@ class MainPage(GridLayout):
         chat_instance.screen_manager.current = "Info_page"
         Clock.schedule_once(self.connect, 1)
 
+    def connect(self, _):
+        usernsame = self.username_input.text
+
+        chat_instance.create_chat_page()
+        chat_instance.screen_manager.current = "Chat"
+
+
