@@ -147,4 +147,3 @@ class ChatPage(GridLayout):
 
 
 
-
