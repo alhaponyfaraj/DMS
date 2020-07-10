@@ -124,4 +124,10 @@ class ChatPage(GridLayout):
         Clock.schedule_once(self.focus_text_input, 1)
 
 
+    def on_key_down(self, instance, keyboard, keycode, text, modifiers):
+        if keycode == 40:
+            self.send_message(None)
+
+
+
 
