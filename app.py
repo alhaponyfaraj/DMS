@@ -98,4 +98,6 @@ class Info(GridLayout):
     def update_text_width(self, *_):
         self.message_text_size = (self.message.width * 0.9, None)
 
+class ChatPage(GridLayout):
+
 
