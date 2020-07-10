@@ -36,3 +36,6 @@ class LabelSroll(ScrollView):
         self.chat_log.text_size = (self.chat_log.width * 0.98, None)
 
         self.scroll_to(self.scroll_target)
+
+
+class MainPage(GridLayout):
