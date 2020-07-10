@@ -17,3 +17,14 @@ kivy.require("1.11.1")
 
 
 class LabelSroll(ScrollView):
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.layout = GridLayout(cols=1, size_hint_y=None)
+        self.add_widget(self.layout)
+
+        self.chat_log = Label(size_hint_y=None, markup=True)
+        self.scroll_target = Label()
+
+        self.layout.add_widget(self.chat_log)
+        self.layout.add_widget(self.scroll_target)
