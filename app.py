@@ -138,5 +138,8 @@ class ChatPage(GridLayout):
 
         Clock.schedule_once(self.focus_text_input, 0.1)
 
+    def focus_text_input(self, _):
+        self.new_message_focus = True
+
 
 
